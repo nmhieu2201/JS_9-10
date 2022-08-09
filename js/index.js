@@ -1,12 +1,10 @@
 var staffList = [];
-function test(log) {
-  console.log(log);
-}
-function uniqueId() {
-  return Math.floor((1 + Math.random()) * 0x100000)
-    .toString(16)
-    .substring(Math.random() * 3);
-}
+
+// function uniqueId() {
+//   return Math.floor((1 + Math.random()) * 0x100000)
+//     .toString(16)
+//     .substring(Math.random() * 3);
+// }
 function createStaff() {
   var staffAccount = document.getElementById("tknv").value;
   var staffName = document.getElementById("name").value;
@@ -108,7 +106,7 @@ function delStaff(account, e) {
   renderStaffList(staffList);
 }
 function editStaff(account) {
-  console.log(!!account);
+  // console.log(!!account);
   if (account) {
     var staffEdit = null;
     for (var index = 0; index < staffList.length; index++) {
@@ -126,11 +124,11 @@ function editStaff(account) {
       document.getElementById("luongCB").value = staffEdit.basicSalary;
       document.getElementById("chucvu").value = staffEdit.position;
       document.getElementById("gioLam").value = staffEdit.workTime;
-      document.getElementById("tknv").disabled = true;
+      // document.getElementById("tknv").disabled = true;
     }
   } else {
-    document.getElementById("tknv").disabled = true;
-    document.getElementById("tknv").value = uniqueId();
+    // document.getElementById("tknv").disabled = true;
+    document.getElementById("tknv").value = "";
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
